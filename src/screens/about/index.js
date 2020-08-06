@@ -7,4 +7,7 @@ const AboutScreen = () => (
   </SafeAreaView>
 );
 
+AboutScreen.navigationOptions = ({navigation}) => ({
+  title: 'About',
+});
 export default AboutScreen;

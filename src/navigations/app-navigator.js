@@ -1,12 +1,31 @@
-import {createBottomTabNavigator} from 'react-navigation-tabs';
+// import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {createStackNavigator} from 'react-navigation-stack';
 
-import HomeScreen from '_screens/home';
+import HomeScreen from '_screens/home/HomeContainer';
 import AboutScreen from '_screens/about';
 
 const TabNavigatorConfig = {
   initialRouteName: 'Home',
-  header: null,
-  headerMode: 'none',
+  header: ({scene, previous, navigation}) => {
+    const {options} = scene.descriptor;
+    const title =
+      options.headerTitle !== undefined
+        ? options.headerTitle
+        : options.title !== undefined
+        ? options.title
+        : scene.route.name;
+
+    return (
+      <MyHeader
+        title={title}
+        leftButton={
+          previous ? <MyBackButton onPress={navigation.goBack} /> : undefined
+        }
+        style={options.headerStyle}
+      />
+    );
+  },
+  headerMode: 'screen',
 };
 
 const RouteConfigs = {
@@ -18,6 +37,7 @@ const RouteConfigs = {
   },
 };
 
-const AppNavigator = createBottomTabNavigator(RouteConfigs, TabNavigatorConfig);
+// const AppNavigator = createBottomTabNavigator(RouteConfigs, TabNavigatorConfig);
+const AppNavigator = createStackNavigator(RouteConfigs, TabNavigatorConfig);
 
 export default AppNavigator;
