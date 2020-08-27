@@ -11,8 +11,8 @@ const HomeScreen = () => (
 
 HomeScreen.navigationOptions = ({navigation}) => ({
   title: 'Home',
-  headerRight: (
-    <TouchableOpacity onPress={() => navigation.navigate('About')}>
+  headerRight: () => (
+    <TouchableOpacity onPress={() => ''}>
       <Text>About</Text>
       {/* <Ionicons name="ios-search" size={25} color="white" left={20} /> */}
     </TouchableOpacity>

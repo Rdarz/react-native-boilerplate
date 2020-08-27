@@ -15,7 +15,8 @@
           "_navigations": "./src/navigations",
           "_screens": "./src/screens",
           "_services": "./src/services",
-          "_styles": "./src/styles",
+          "_common": "./src/common",
+          "_styles": "./src/common/styles",
           "_utils": "./src/utils"
         }
       }
