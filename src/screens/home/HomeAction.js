@@ -1,10 +1,10 @@
-export const GET_USER_DETAILS = 'GET_USER_DETAILS';
+export const GET_PLANTS = 'GET_PLANTS';
 
 // -------------------Auth Loading Actions--------------------
 
-export const getUserDetailsSuccess = payload => {
+export const getPlantsSuccess = payload => {
   return {
-    type: GET_USER_DETAILS,
+    type: GET_PLANTS,
     payload,
   };
 };

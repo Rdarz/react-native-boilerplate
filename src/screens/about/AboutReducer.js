@@ -1,9 +1,9 @@
-import {GET_PLANTS} from './HomeAction';
+import {GET_PLANT_DETAILS} from './AboutAction';
 
 const ACTION_HANDLERS = {
-  [GET_PLANTS]: (state, action) => ({
+  [GET_PLANT_DETAILS]: (state, action) => ({
     ...state,
-    plants: action.payload,
+    plantDetails: action.payload,
   }),
 };
 

@@ -1,19 +1,19 @@
-import {getPlantsSuccess} from './HomeAction';
+import {getPlantDetailsSuccess} from './AboutAction';
 import {get} from '~/src/services/AxiosClient';
 import api from '~/src/common/constants/ApiConstants';
 import {TREFLE_TOKEN} from 'react-native-dotenv';
 
-export const getPlants = (props = null, searchText) => {
+export const getPlantDetails = (props = null, id) => {
   return async (dispatch, getState) => {
-    const url = `${api.fetchPlants}/search`;
+    const url = `${api.fetchPlants}/${id}`;
     return await get(
       url,
       {
-        params: {token: TREFLE_TOKEN, q: searchText},
+        params: {token: TREFLE_TOKEN},
       },
       onSuccessData => {
         console.log('onSuccessData====>>>', onSuccessData);
-        dispatch(getPlantsSuccess(onSuccessData));
+        dispatch(getPlantDetailsSuccess(onSuccessData));
         // setLoader(false)
       },
       OnFailureData => {

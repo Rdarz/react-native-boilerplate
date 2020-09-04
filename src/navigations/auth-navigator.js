@@ -1,17 +1,8 @@
-import {createStackNavigator} from 'react-navigation-stack';
+import LoginScreen from '~/src/screens/login';
+import SplashScreen from '~/src/screens/splash';
 
-import LoginScreen from '_screens/login';
-
-const AuthNavigatorConfig = {
-  initialRouteName: 'Login',
-  header: null,
-  headerMode: 'none',
+const AuthScreens = {
+  SignIn: LoginScreen,
+  SplashScreen,
 };
-
-const RouteConfigs = {
-  Login: LoginScreen,
-};
-
-const AuthNavigator = createStackNavigator(RouteConfigs, AuthNavigatorConfig);
-
-export default AuthNavigator;
+export default AuthScreens;

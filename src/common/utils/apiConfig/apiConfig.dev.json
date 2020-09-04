@@ -1,4 +1,4 @@
 {
-  "baseURL": "https://reqres.in",
-  "restApiRoot": "/api"
+  "baseURL": "https://trefle.io",
+  "restApiRoot": "/api/v1"
 }

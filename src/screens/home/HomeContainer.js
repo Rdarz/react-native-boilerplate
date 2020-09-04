@@ -1,22 +1,34 @@
-import React from 'react';
-import {SafeAreaView, Text, TouchableOpacity} from 'react-native';
-// import HomeScreen from './components';
-import DataList from './components';
+import React, {useState} from 'react';
+import {Animated, SafeAreaView, Text, TouchableOpacity} from 'react-native';
 
-const HomeScreen = () => (
-  <SafeAreaView>
-    <DataList />
-  </SafeAreaView>
-);
+import LoaderComponent from './components/LoaderComponent';
+import SearchComponent from './components/SearchComponent';
 
-HomeScreen.navigationOptions = ({navigation}) => ({
-  title: 'Home',
-  headerRight: (
-    <TouchableOpacity onPress={() => navigation.navigate('About')}>
-      <Text>About</Text>
-      {/* <Ionicons name="ios-search" size={25} color="white" left={20} /> */}
-    </TouchableOpacity>
-  ),
-});
+console.disableYellowBox = true;
+
+const HomeScreen = () => {
+  return (
+    <Animated.View>
+      <SafeAreaView>
+        <SearchComponent />
+        <Animated.ScrollView
+          showsVerticalScrollIndicator={true}
+          style={{
+            margin: 20,
+            backgroundColor: 'white',
+            paddingTop: 55,
+          }}
+          contentContainerStyle={{
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'space-around',
+          }}>
+          <LoaderComponent />
+        </Animated.ScrollView>
+      </SafeAreaView>
+    </Animated.View>
+  );
+};
 
 export default HomeScreen;
